@@ -7,7 +7,7 @@ export async function fetchCars(filters: FilterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
 
   const headers = {
-    "X-RapidAPI-Key": "ae761693e1mshcfd890a2faa180fp1e7a9fjsn44d6cae0fb1c",
+    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || " ",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
 
@@ -43,7 +43,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   url.searchParams.append(
     "customer",
-    process.env.NEXT_PUBLIC_IMAGIN_API_KEY || "indjcompany"
+    process.env.NEXT_PUBLIC_IMAGIN_API_KEY || " "
   );
   url.searchParams.append("make", make);
   url.searchParams.append("modelFamily", model.split(" ")[0]);
