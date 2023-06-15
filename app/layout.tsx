@@ -1,17 +1,13 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Footer, Navbar } from "@/components";
+import { LayoutProps } from "@/types";
 
 export const metadata = {
   title: "CarCase",
   description: "The Best Car Booking Platform",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className="relative">
